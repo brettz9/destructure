@@ -1,5 +1,5 @@
 /**
-* Simple workaround for unsupported array destructuring assignment
+* Simple workaround for non-universal array destructuring assignment
 * @param {array} arr Array of values to destructure
 * @param {function} unpackCb The callback which will be passed each value of the array in order
 * @returns {*} Returns the result of the unpackCb() execution
