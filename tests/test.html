@@ -8,14 +8,19 @@
 </head>
 <body>
 <script>
-var arr = [3, 4, 5];
-var added = destructure(arr, function (a, b, c) {
-    return a + b + c;
-});
+/*globals destructure, Assert */
+(function () {
+'use strict';
 
-var assert = Assert().is(added === 12, 'Passed addition test');
-document.write('Total tests: ' + assert.count);
+var arr = [3, 4, 5],
+    added = destructure(arr, function (a, b, c) {
+        return a + b + c;
+    }),
+    assert = Assert().is(added === 12, 'Passed addition test');
 
+assert.writeCount('Total tests: ');
+
+}());
 </script>
 </body>
 </html>
