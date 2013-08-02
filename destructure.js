@@ -13,5 +13,6 @@
 * alert(added); // 12
 */
 module.exports = function destructure (arr, unpackCb) {
+    'use strict';
     return unpackCb.apply(null, arr);
 };
