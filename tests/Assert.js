@@ -1,28 +1,46 @@
-// var destructure = require('destructure'); // Omit this line if including the destructure.js file in a browser
+/*globals define, module*/
 
 (function () {
 'use strict';
 
-function write (msg) {
-    document.body.appendChild(document.createTextNode(msg));
-    document.body.appendChild(document.createElement('br'));
-}
-
-function Assert () {
+/**
+* @param options
+* @property {http.ServerResponse|object} [options.write] Optional object with a "write" method (e.g., a server response object from the Node.js http module)
+*/
+function Assert (options) {
     if (!(this instanceof Assert)) {
-        return new Assert();
+        return new Assert(options);
     }
     this.count = 0;
+    if (options && options.write) {
+        this.write = function (msg) {
+            options.write(msg);
+        };
+    }
 }
-Assert.prototype.is = function (condition, msg) {
-    write(msg + ': ' + condition);
+Assert.prototype.is = function is(condition, msg) {
+    this.write(msg + ': ' + condition);
     this.count++;
     return this;
 };
-Assert.prototype.writeCount = function (msg) {
-    write(msg + this.count);
+Assert.prototype.writeCount = function writeCount (msg) {
+    this.write(msg + this.count);
+};
+Assert.prototype.write = function write (msg) {
+    document.body.appendChild(document.createTextNode(msg));
+    document.body.appendChild(document.createElement('br'));
 };
 
-window.Assert = Assert;
+if (typeof define === 'function' && define.amd) {
+    define(function () {
+        return Assert;
+    });
+}
+else if (typeof module === 'object' && module.hasOwnProperty('exports')) {
+    module.exports = Assert;
+}
+else {
+    window.Assert = Assert;
+}
 
 }());
