@@ -1,0 +1,31 @@
+{
+    "name": "destructure",
+    "version": "0.1.0",
+    "author": {
+        "name": "Brett Zamir",
+        "email": "brettz9@yahoo.com",
+        "url": "brett-zamir.me"
+    },
+    "description": "Simple workaround for unsupported array destructuring assignment",
+    "main": "./destructure",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/brettz9/destructure.git"
+    },
+    "keywords": [
+        "destructure",
+        "destructuring",
+        "assignment",
+        "unpack",
+        "list",
+        "tuple"
+    ],
+    "license": "MIT",
+    "engine": {
+        "node": ">=0.10"
+    },
+    "readmeFilename": "README.md",
+    "bugs": {
+        "url": "https://github.com/brettz9/destructure/issues"
+    }
+}
