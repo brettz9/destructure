@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>destructure() tests</title>
+<script src="../destructure.js"></script>
+<script src="Assert.js"></script>
+</head>
+<body>
+<script>
+var arr = [3, 4, 5];
+var added = destructure(arr, function (a, b, c) {
+    return a + b + c;
+});
+
+var assert = Assert().is(added === 12, 'Passed addition test');
+document.write('Total tests: ' + assert.count);
+
+</script>
+</body>
+</html>
