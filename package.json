@@ -6,7 +6,7 @@
         "email": "brettz9@yahoo.com",
         "url": "brett-zamir.me"
     },
-    "description": "Simple workaround for unsupported array destructuring assignment",
+    "description": "Simple workaround for non-universal array destructuring assignment",
     "main": "./destructure",
     "repository": {
         "type": "git",
