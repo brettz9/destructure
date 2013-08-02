@@ -28,7 +28,7 @@ else if (typeof module === 'object' && module.hasOwnProperty('exports')) {
     module.exports = destructure;
 }
 else {
-    this.destructure = destructure;
+    window.destructure = destructure;
 }
 
 }());
