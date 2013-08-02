@@ -1,4 +1,4 @@
-/*globals module*/
+/*globals module, define*/
 /**
 * Simple workaround for non-universal array destructuring assignment
 * @param {array} arr Array of values to destructure
@@ -12,7 +12,23 @@
 * });
 * alert(added); // 12
 */
-module.exports = function destructure (arr, unpackCb) {
+(function () {
     'use strict';
+
+function destructure (arr, unpackCb) {
     return unpackCb.apply(null, arr);
-};
+}
+
+if (typeof define === 'function' && define.amd) {
+    define(function () {
+        return destructure;
+    });
+}
+else if (typeof module === 'object' && module.hasOwnProperty('exports')) {
+    module.exports = destructure;
+}
+else {
+    this.destructure = destructure;
+}
+
+}());
