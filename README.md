@@ -1,6 +1,8 @@
 destructure
 ===========
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/brettz9/destructure.svg)](https://greenkeeper.io/)
+
 Simple workaround for non-universal array destructuring assignment.
 
 install
